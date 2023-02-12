@@ -16,10 +16,10 @@ describe('CourseCreator', () => {
     const name = 'some-name';
     const duration = 'some-duration';
 
-    const course = new Course(id, name, duration);
+    const expectedCourse = new Course(id, name, duration);
 
     await creator.run(id, name, duration);
 
-    repository.assertLastSavedCourseIs(course);
+    repository.assertLastSavedCourseIs(expectedCourse);
   });
 });
